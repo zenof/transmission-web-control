@@ -10,7 +10,7 @@ ORG_INDEX_FILE="index.original.html"
 INDEX_FILE="index.html"
 TMP_FOLDER="/tmp/tr-web-control"
 PACK_NAME="master.tar.gz"
-WEB_HOST="https://github.com/ronggang/transmission-web-control/archive/"
+WEB_HOST="https://github.com/zenof/transmission-web-control/archive/"
 DOWNLOAD_URL="$WEB_HOST$PACK_NAME"
 # 安装类型
 # 1 安装至当前 Transmission Web 所在目录
@@ -120,7 +120,7 @@ initValues() {
 		fi
 		showLog "$MSG_SPECIFIED_VERSION $VERSION"
 		
-		DOWNLOAD_URL="https://github.com/ronggang/transmission-web-control/archive/$PACK_NAME"
+		DOWNLOAD_URL="https://github.com/zenof/transmission-web-control/archive/$PACK_NAME"
 	fi	
 
 	if [ $SKIP_SEARCH = 0 ]; then
