@@ -1115,11 +1115,11 @@ var system = {
 			if (this.control.torrentlist.datagrid("getRows").length==0) {
 				return;
 			}
-			$("#toolbar_start, #toolbar_pause, #toolbar_remove, #toolbar_recheck, #toolbar_changeDownloadDir,#toolbar_morepeers,#toolbar_copyPath", this.panel.toolbar).linkbutton({
+			$("#toolbar_start, #toolbar_pause, #toolbar_remove, #toolbar_recheck, #toolbar_changeDownloadDir,#toolbar_copyPath", this.panel.toolbar).linkbutton({
 				disabled: rowData
 			});
 
-			$("#toolbar_rename, #toolbar_morepeers", this.panel.toolbar).linkbutton({
+			$("#toolbar_rename", this.panel.toolbar).linkbutton({
 				disabled: true
 			});
 			this.panel.toolbar.find("#toolbar_queue").menubutton("disable");
@@ -1129,7 +1129,7 @@ var system = {
 		// 如果没有被选中的数据时
 		if (this.checkedRows.length == 0) {
 			// 禁用所有菜单
-			$("#toolbar_start, #toolbar_pause, #toolbar_rename, #toolbar_remove, #toolbar_recheck, #toolbar_changeDownloadDir,#toolbar_morepeers,#toolbar_copyPath", this.panel.toolbar).linkbutton({
+			$("#toolbar_start, #toolbar_pause, #toolbar_rename, #toolbar_remove, #toolbar_recheck, #toolbar_changeDownloadDir,#toolbar_copyPath", this.panel.toolbar).linkbutton({
 				disabled: true
 			});
 			this.panel.toolbar.find("#toolbar_queue").menubutton("disable");
@@ -1151,7 +1151,7 @@ var system = {
 					this.panel.toolbar.find("#toolbar_start, #toolbar_recheck").linkbutton({
 						disabled: false
 					});
-					this.panel.toolbar.find("#toolbar_pause, #toolbar_morepeers").linkbutton({
+					this.panel.toolbar.find("#toolbar_pause").linkbutton({
 						disabled: true
 					});
 					break;
@@ -1159,7 +1159,7 @@ var system = {
 				// 校验
 				case transmission._status.check:
 				case transmission._status.checkwait:
-					this.panel.toolbar.find("#toolbar_start, #toolbar_pause, #toolbar_recheck, #toolbar_morepeers").linkbutton({
+					this.panel.toolbar.find("#toolbar_start, #toolbar_pause, #toolbar_recheck").linkbutton({
 						disabled: true
 					});
 					break;
@@ -1180,7 +1180,7 @@ var system = {
 			$("#toolbar_start, #toolbar_pause, #toolbar_remove, #toolbar_recheck, #toolbar_changeDownloadDir,#toolbar_copyPath", this.panel.toolbar).linkbutton({
 				disabled: false
 			});
-			$("#toolbar_rename, #toolbar_morepeers", this.panel.toolbar).linkbutton({
+			$("#toolbar_rename", this.panel.toolbar).linkbutton({
 				disabled: true
 			});
 			this.panel.toolbar.find("#toolbar_queue").menubutton("disable");
@@ -1399,7 +1399,7 @@ var system = {
 		// Get more peers
 		this.panel.toolbar.find("#toolbar_morepeers")
 			.linkbutton({
-				disabled: true
+				disabled: false
 			})
 			.click(function () {
 				system.changeSelectedTorrentStatus("reannounce", $(this));
